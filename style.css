@@ -23,7 +23,7 @@ header {
 .count {
     display: flex;
     flex-direction: row;
-    font-size: 5vw;
+    font-size: 4.5vw;
 }
 
 .days, .hours, .minutes, .seconds {
