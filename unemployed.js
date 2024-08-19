@@ -1,29 +1,26 @@
 'use strict';
 
-const unemployedDate = new Date('08/14/2024');
-const hoursInADay = 24;
-const minutesInAHour = 60;
-const secondsInAMinute = 60;
-const millisecondsInASecond = 1000;
+const unemployedDate = new Date('08/14/2024 07:33:00');
+const hoursInDay = 24;
+const minutesInHour = 60;
+const secondsInMinute = 60;
+const millisecondsInSecond = 1000;
 
 const countDays = () => {
-    let currentDate = new Date();
-    console.log(unemployedDate.toLocaleDateString());
-    console.log(currentDate.toLocaleDateString());
+    const currentDate = new Date();
 
-    let difference = new Date();
-    difference = currentDate.getTime() - unemployedDate.getTime();
+    const difference = currentDate.getTime() - unemployedDate.getTime();
 
-    let days = Math.floor(difference / (hoursInADay*minutesInAHour*secondsInAMinute*millisecondsInASecond));
-    let daysRemaining = difference % (hoursInADay*minutesInAHour*secondsInAMinute*millisecondsInASecond);
+    const days = Math.floor(difference / (hoursInDay*minutesInHour*secondsInMinute*millisecondsInSecond));
+    const daysRemaining = difference % (hoursInDay*minutesInHour*secondsInMinute*millisecondsInSecond);
 
-    let hours = Math.floor(daysRemaining / (minutesInAHour*secondsInAMinute*millisecondsInASecond));
-    let hoursRemaining = daysRemaining % (minutesInAHour*secondsInAMinute*millisecondsInASecond);
+    const hours = Math.floor(daysRemaining / (minutesInHour*secondsInMinute*millisecondsInSecond));
+    const hoursRemaining = daysRemaining % (minutesInHour*secondsInMinute*millisecondsInSecond);
 
-    let minutes = Math.floor(hoursRemaining / (secondsInAMinute*millisecondsInASecond));
-    let minutesRemaining = hoursRemaining % (secondsInAMinute*millisecondsInASecond);
+    const minutes = Math.floor(hoursRemaining / (secondsInMinute*millisecondsInSecond));
+    const minutesRemaining = hoursRemaining % (secondsInMinute*millisecondsInSecond);
 
-    let seconds = Math.floor(minutesRemaining / millisecondsInASecond);
+    const seconds = Math.floor(minutesRemaining / millisecondsInSecond);
     
     console.log(days, hours, minutes, seconds);
     
@@ -33,4 +30,4 @@ const countDays = () => {
     document.querySelector('.seconds').innerHTML = seconds + " SECS";
 }
 
-setInterval(countDays, millisecondsInASecond);
+setInterval(countDays, millisecondsInSecond);
